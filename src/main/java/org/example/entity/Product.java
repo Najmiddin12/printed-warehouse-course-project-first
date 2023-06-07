@@ -6,6 +6,7 @@ public abstract class Product<SELF extends Product<SELF>> {
 
     private String title;
     private String publisher;
+    private int price;
 
     public String getTitle() { return  title; }
 
@@ -21,6 +22,13 @@ public abstract class Product<SELF extends Product<SELF>> {
         return (SELF) this;
     }
 
+    public int getPrice() { return  price; }
+
+    public SELF setPrice(int price) {
+        this.price = price;
+        return (SELF) this;
+    }
+
     @Override
     public String toString() {
         return "Product{" + commonFields() + '}';
@@ -28,7 +36,8 @@ public abstract class Product<SELF extends Product<SELF>> {
 
     protected String commonFields() {
         return "title=" + title
-            + ", publisher=" + publisher;
+            + ", publisher=" + publisher
+            + ", price=" + price;
     }
 
 
@@ -37,13 +46,14 @@ public abstract class Product<SELF extends Product<SELF>> {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Product<?> product = (Product<?>) o;
-        return publisher == product.publisher &&
-                Objects.equals(title, product.title);
+        return price == product.price &&
+                Objects.equals(title, product.title) &&
+                Objects.equals(publisher, product.publisher);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getTitle(), getPublisher());
+        return Objects.hash(getTitle(), getPublisher(), getPrice());
     }
 
 

@@ -7,7 +7,7 @@ public enum ServiceFactory {
     INSTANCE;
 
 
-    public ProductService getApplianceService() {
+    public ProductService getProductService() {
 
         return new ProductServiceImpl(DaoFactoryImpl.INSTANCE);
     }

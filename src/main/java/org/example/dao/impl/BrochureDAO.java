@@ -1,5 +1,6 @@
 package org.example.dao.impl;
 
+import static org.example.dao.CsvLineParser.Extractor.forInt;
 import static org.example.dao.CsvLineParser.Extractor.forString;
 
 import org.example.dao.AbstractDao;
@@ -16,7 +17,8 @@ public class BrochureDAO extends AbstractDao<Brochure> {
                 forString(Product::setPublisher),
                 forString(Brochure::setTargetAudience),
                 forString(Brochure::setPaperType),
-                forString(Brochure::setSize)
+                forString(Brochure::setSize),
+                forInt(Product::setPrice)
         )));
     }
 }

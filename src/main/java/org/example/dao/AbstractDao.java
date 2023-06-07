@@ -37,13 +37,13 @@ public abstract class AbstractDao<A extends Product<A>> implements ProductDAO<A>
         try (var in = Files.newBufferedReader(csvPath)){
             in.readLine(); // headers
             String line;
-            var appliances = new ArrayList<A>();
+            var products = new ArrayList<A>();
             while ((line = in.readLine()) != null) {
                 String[] csvLine = line.split(";");
-                var appliance = parser.parse(csvLine);
-                if (criteria.test(appliance)) appliances.add(appliance);
+                var product = parser.parse(csvLine);
+                if (criteria.test(product)) products.add(product);
             }
-            return appliances;
+            return products;
         }
         catch (IOException e) {
             return List.of();

@@ -8,6 +8,7 @@ import org.example.controller.converters.impl.FormatParameterConverter;
 import org.example.controller.converters.impl.NumberOfPagesParameterConverter;
 import org.example.controller.converters.impl.PaperTypeParameterConverter;
 import org.example.controller.converters.impl.SizeParameterConverter;
+import org.example.controller.converters.impl.PriceParameterConverter;
 import org.example.entity.Product;
 
 @SuppressWarnings("rawtypes")
@@ -18,7 +19,8 @@ public enum RawConverters {
     FORMAT(new FormatParameterConverter()),
     NUMBER_OF_PAGES(new NumberOfPagesParameterConverter()),
     PAPER_TYPE(new PaperTypeParameterConverter()),
-    SIZE(new SizeParameterConverter());
+    SIZE(new SizeParameterConverter()),
+    PRICE(new PriceParameterConverter());
 
     private final ParameterConverter converter;
 

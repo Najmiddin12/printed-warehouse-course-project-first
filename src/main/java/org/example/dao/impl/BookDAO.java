@@ -17,7 +17,8 @@ public class BookDAO extends AbstractDao<Book> {
                 forString(Product::setPublisher),
                 forString(Book::setAuthor),
                 forInt(Book::setEdition),
-                forString(Book::setFormat)
+                forString(Book::setFormat),
+                forInt(Product::setPrice)
         )));
     }
 }

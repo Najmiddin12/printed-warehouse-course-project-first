@@ -10,18 +10,6 @@ import java.io.IOException;
 import java.util.Map;
 import java.util.Objects;
 
-/**
- * Defines which controller must be used based on the input (System.in).
- * <p/>
- * Input format:<br/>
- * <pre>
- *   Find laptops ...
- *   Laptops
- *   power_consumption=?
- *   price=?
- *   Search
- * </pre>
- */
 public class DispatcherController implements Closeable {
 
     private final IOHolder io;

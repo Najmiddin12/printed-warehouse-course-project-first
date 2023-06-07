@@ -19,19 +19,22 @@ public enum ControllerFactory {
                         "books", new BookController(productService, List.of(
                                 RawConverters.TITLE.generic(),
                                 RawConverters.PUBLISHER.generic(),
+                                RawConverters.PRICE.generic(),
                                 RawConverters.EDITION.generic(),
                                 RawConverters.FORMAT.generic()
                         )),
                         "magazines", new MagazineController(productService, List.of(
                                 RawConverters.TITLE.generic(),
                                 RawConverters.PUBLISHER.generic(),
+                                RawConverters.PRICE.generic(),
                                 RawConverters.NUMBER_OF_PAGES.generic()
                         )),
                         "brochures", new BrochureController(productService, List.of(
                                 RawConverters.TITLE.generic(),
                                 RawConverters.PUBLISHER.generic(),
+                                RawConverters.PRICE.generic(),
                                 RawConverters.PAPER_TYPE.generic(),
-                                RawConverters.TITLE.generic()
+                                RawConverters.SIZE.generic()
                         ))
                 )
         );

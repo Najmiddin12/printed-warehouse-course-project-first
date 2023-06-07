@@ -16,7 +16,8 @@ public class MagazineDAO extends AbstractDao<Magazine> {
                 forString(Product::setTitle),
                 forString(Product::setPublisher),
                 forString(Magazine::setIssueDate),
-                forInt(Magazine::setNumberOfPages)
+                forInt(Magazine::setNumberOfPages),
+                forInt(Product::setPrice)
         )));
     }
 }
